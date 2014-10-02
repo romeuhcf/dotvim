@@ -21,13 +21,13 @@ repo=$1
 author=$(dirname $repo)
 module=$(basename $repo)
 if [ ! -d  ~/.vim/bundle/$module ];then
-git clone  https://github.com/$author/$module ~/.vim/bundle/$module
+  git clone  https://github.com/$author/$module ~/.vim/bundle/$module
 fi
 }
 
 install_pathogen
 install_molokai
-for repo in bling/vim-airline vim-scripts/ctrlp.vim majutsushi/tagbar tpope/vim-fugitive scrooloose/nerdtree
+cat modules_list | while read module
 do
-  install_pathogen_module_from_github $repo
+  install_pathogen_module_from_github $module
 done

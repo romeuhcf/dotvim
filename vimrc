@@ -65,7 +65,7 @@ set t_Co=256
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  autocmd BufWritePre vimrc,*.sh,*.rb,*.erb,*.html,*.js,*.css,*.php,*.py,*.json :call <SID>StripTrailingWhitespaces() " remove trailing white spaces before saving (only in specified filetypes)
+  autocmd BufWritePre vimrc,*.vim,.*.sh,*.rb,*.erb,*.html,*.js,*.css,*.php,*.py,*.json :call <SID>StripTrailingWhitespaces() " remove trailing white spaces before saving (only in specified filetypes)
 endif
 
 " function to remove trailing white space (while saving cursor position)
@@ -84,4 +84,8 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 
+" use sudo to write the file
+cmap w!! w !sudo tee % >/dev/null
+
+source ~/.vim/statusline.vim
 source ~/.vim/mappings.vim
