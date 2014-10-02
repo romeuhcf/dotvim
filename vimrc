@@ -57,6 +57,7 @@ set backupdir=~/.vim/backup " dir to save backup files
 set directory=~/.vim/tmp " dir to keep all swap files
 set laststatus=2 " show status line all the time
 
+colorscheme molokai
 
 
 if has("autocmd")
