@@ -25,13 +25,11 @@ set ignorecase smartcase " ignore case while searching except if there's an uppe
 set hlsearch " highlight matches
 set scrolloff=3 " show 3 lines of context around the cursor
 
-" enable 256 colors in terminal
-set t_Co=256
 
 
-" file type settings 
+" file type settings
 syntax on " enable syntax highlighting
-filetype on " auto detect the type of file that is being edited 
+filetype on " auto detect the type of file that is being edited
 filetype plugin on " enable file type detection
 filetype indent on " enable filetype-based indentation
 
@@ -41,7 +39,7 @@ set shiftwidth=2 " number of spaces used for (auto)indent
 set expandtab " use soft tabs (spaces)
 set softtabstop=2 " size of soft tabs
 set autoindent " auto indent lines
-set smartindent " smart (language based) auto indent 
+set smartindent " smart (language based) auto indent
 
 
 set backspace=indent,eol,start " intuitive backspacing
@@ -59,7 +57,26 @@ set laststatus=2 " show status line all the time
 
 colorscheme molokai
 
+" enable 256 colors in terminal
+set t_Co=256
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  autocmd BufWritePre vimrc,*.sh,*.rb,*.erb,*.html,*.js,*.css,*.php,*.py,*.json :call <SID>StripTrailingWhitespaces() " remove trailing white spaces before saving (only in specified filetypes)
 endif
+
+
+" function to remove trailing white space (while saving cursor position)
+" http://vimcasts.org/episodes/tidying-whitespace/
+
+function! <SID>StripTrailingWhitespaces()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
