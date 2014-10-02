@@ -1,5 +1,9 @@
 #!/bin/bash
 
+function install_os_dependencies(){
+  sudo apt-get install exuberant-ctags -y
+}
+
 function install_pathogen(){
 if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
   mkdir -p ~/.vim/autoload ~/.vim/bundle
@@ -25,9 +29,12 @@ if [ ! -d  ~/.vim/bundle/$module ];then
 fi
 }
 
+install_os_dependencies
 install_pathogen
 install_molokai
 cat modules_list | while read module
 do
   install_pathogen_module_from_github $module
 done
+
+ln -sf ~/.vim/vimrc ~/.vimrc
