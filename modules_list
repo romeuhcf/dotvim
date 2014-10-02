@@ -22,3 +22,6 @@ tpope/vim-haml
 tpope/vim-cucumber
 tpope/vim-rvm
 airblade/vim-gitgutter
+altercation/vim-colors-solarized
+scrooloose/nerdcommenter
+pangloss/vim-javascript

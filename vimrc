@@ -1,9 +1,9 @@
-
 source ~/.vim/plugins.vim
 
 call pathogen#infect()
 call pathogen#helptags()
 
+source ~/.vim/theme.vim
 
 set mouse=a
 
@@ -58,10 +58,6 @@ set backupdir=~/.vim/backup " dir to save backup files
 set directory=~/.vim/tmp " dir to keep all swap files
 set laststatus=2 " show status line all the time
 
-colorscheme molokai
-
-" enable 256 colors in terminal
-set t_Co=256
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
