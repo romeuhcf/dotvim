@@ -21,3 +21,4 @@ slim-template/vim-slim
 tpope/vim-haml
 tpope/vim-cucumber
 tpope/vim-rvm
+airblade/vim-gitgutter
