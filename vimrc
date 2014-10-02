@@ -1,3 +1,6 @@
+
+source ~/.vim/plugins.vim
+
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -65,7 +68,6 @@ if has("autocmd")
   autocmd BufWritePre vimrc,*.sh,*.rb,*.erb,*.html,*.js,*.css,*.php,*.py,*.json :call <SID>StripTrailingWhitespaces() " remove trailing white spaces before saving (only in specified filetypes)
 endif
 
-
 " function to remove trailing white space (while saving cursor position)
 " http://vimcasts.org/episodes/tidying-whitespace/
 
@@ -80,3 +82,6 @@ function! <SID>StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
+
+
+source ~/.vim/mappings.vim
