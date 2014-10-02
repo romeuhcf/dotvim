@@ -1,3 +1,7 @@
+call pathogen#infect()
+call pathogen#helptags()
+
+
 set mouse=a
 
 set nocompatible " do not use vi compatibility mode. must come first because it changes other options.
