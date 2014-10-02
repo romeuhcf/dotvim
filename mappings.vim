@@ -24,3 +24,8 @@ map <Leader>l :call RunLastSpec()<CR>
 " Buffer Navigation
 :noremap <C-left> :bprev<CR>
 :noremap <C-right> :bnext<CR>
+
+
+" Ruby debugger
+" map <leader>pry orequire 'pry'; binding.pry<ESC>:w<CR>
+" imap <leader>pry <CR>require 'pry'; binding.pry<ESC>:w<CR>
