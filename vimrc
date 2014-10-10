@@ -6,6 +6,8 @@ call pathogen#helptags()
 source ~/.vim/theme.vim
 
 set mouse=a
+" set clipboard=unnamed
+set clipboard=unnamedplus
 
 set nocompatible " do not use vi compatibility mode. must come first because it changes other options.
 set showcmd " show incomplete commands
@@ -21,14 +23,11 @@ set cursorline " highlight cursor line
 set linebreak " don't break wrapped lines on words
 set nowrap " set no word rap line
 
-
 " search settings
 set incsearch " highlight matches as you type
 set ignorecase smartcase " ignore case while searching except if there's an uppercase letter
 set hlsearch " highlight matches
 set scrolloff=3 " show 3 lines of context around the cursor
-
-
 
 " file type settings
 syntax on " enable syntax highlighting

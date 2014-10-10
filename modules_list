@@ -25,3 +25,5 @@ airblade/vim-gitgutter
 altercation/vim-colors-solarized
 scrooloose/nerdcommenter
 pangloss/vim-javascript
+rking/ag.vim
+ngmy/vim-rubocop
