@@ -31,8 +31,8 @@ noremap <C-left> :bprev<CR>
 noremap <C-right> :bnext<CR>
 
 "" for insert mode
-imap <F12> <c-o>:set list! \| set nu! \| call gitgutter#toggle()<CR>
-map <F12> :set list! \| set nu! \| call gitgutter#toggle()<CR>
+imap <F12> <c-o>:set list! \| set nu! \| call gitgutter#toggle() \| :set paste!<CR>
+map <F12> :set list! \| set nu! \| call gitgutter#toggle() \| :set paste!<CR>
 
 
 
