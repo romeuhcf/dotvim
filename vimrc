@@ -25,7 +25,7 @@ set nowrap " set no word rap line
 
 " search settings
 set incsearch " highlight matches as you type
-set ignorecase smartcase " ignore case while searching except if there's an uppercase letter
+"set ignorecase smartcase " ignore case while searching except if there's an uppercase letter
 set hlsearch " highlight matches
 set scrolloff=3 " show 3 lines of context around the cursor
 
