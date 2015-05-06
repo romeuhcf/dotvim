@@ -20,6 +20,7 @@
 set -o nounset                              # Treat unset variables as an error
 set -e 
 sudo apt-get install r-base
+sudo apt-get install r-cran-testthat
 cd /tmp 
 wget -c -nc http://download1.rstudio.org/rstudio-0.98.1103-amd64.deb
 sudo dpkg -i rstudio-0.98.1103-amd64.deb 
