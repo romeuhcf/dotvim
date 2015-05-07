@@ -23,5 +23,6 @@ sudo apt-get install r-base
 cd /tmp 
 wget -c -nc http://download1.rstudio.org/rstudio-0.98.1103-amd64.deb
 sudo dpkg -i rstudio-0.98.1103-amd64.deb 
+sudo R CMD javareconf
 
 
