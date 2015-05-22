@@ -25,4 +25,7 @@ cd ~/.local/share/rhythmbox/plugins/
 git clone https://github.com/ppipada/rhythmbox-plugins.git || (cd rhythmbox-plugins && git pull)
 cp -rf rhythmbox-plugins/* . -v 
 
+cd ~/.local/share/rhythmbox/plugins/ 
+git clone git@github.com:romeuhcf/rhythmbox-copycurrent.git copycurrent || (cd copycurrent && git pull)
+
 
