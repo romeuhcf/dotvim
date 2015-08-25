@@ -60,4 +60,5 @@ install_pathogen
 install_fonts
 install_pathogen_modules_from_github
 
+ln -sf ~/.vim/profile.bash ~/.profile
 ln -sf ~/.vim/vimrc ~/.vimrc
