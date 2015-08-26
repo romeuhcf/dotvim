@@ -154,3 +154,9 @@ ftpane () {
     tmux select-window -t $target_window
   fi
 }
+
+## Help  
+#   fh                 - exibe esta listagem
+fh(){
+grep '^#\+' ~/.vim/fzfcommands.bash 
+}

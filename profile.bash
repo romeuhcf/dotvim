@@ -56,5 +56,5 @@ echo " ["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> 
 # I had to put the \[ and \] down here, as opposed to $IRED, to avoid wrapping funkiness.
 export PS1="\[$IRED\]$USER: \$(rvm_version)\[$NO_COLOR\]\w\[$IGRN\]\$(parse_git_branch)\n \[$IYEL\]⊗ \[$NO_COLOR\]"
 source  ~/.vim/fzfcommands.bash  
-grep '^#\+' ~/.vim/fzfcommands.bash 
+fh
 export EDITOR=vim
