@@ -52,9 +52,12 @@ echo " ["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> 
 
 #PS1="\h:\W \u\$" # For reference, here's the default OS X prompt
 #export PS1="\$(rvm_version)\W \$(parse_git_branch)\$ " # Without the colors
-
+for i in ~/.vim/profile.d/*.sh
+do 
+  echo "Loading $i"
+  source $i
+done
 # I had to put the \[ and \] down here, as opposed to $IRED, to avoid wrapping funkiness.
 export PS1="\[$IRED\]$USER: \$(rvm_version)\[$NO_COLOR\]\w\[$IGRN\]\$(parse_git_branch)\n \[$IYEL\]⊗ \[$NO_COLOR\]"
 source  ~/.vim/fzfcommands.bash  
-fh
 export EDITOR=vim

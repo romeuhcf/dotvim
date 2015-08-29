@@ -45,15 +45,12 @@ sudo R CMD javareconf
 
 cd /tmp 
 wget -c -nc http://download1.rstudio.org/rstudio-0.98.1103-amd64.deb && sudo dpkg -i rstudio-0.98.1103-amd64.deb 
-
-
-
 }
+
 
 install_python
 install_python_packages
 install_r
 install_r_packages
-
 
 echo "SUCESSO"
