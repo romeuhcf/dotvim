@@ -32,6 +32,7 @@ NO_COLOR="$ESC[0m"
 IRED="$ESC[1;31m" # ANSI color code for intense/bold red
 IGRN="$ESC[1;32m" # ANSI color code for intense/bold green
 IYEL="$ESC[1;33m" # ANSI color code for intense/bold yellow
+IBLU="$ESC[1;34m" # ANSI color code for intense/bold blue
 
 # From http://railstips.org/blog/archives/2009/02/02/bedazzle-your-bash-prompt-with-git-info/
 # I had to change 'git-symbolic-ref' to 'git symbolic-ref'
@@ -54,7 +55,7 @@ echo " ["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> 
 #export PS1="\$(rvm_version)\W \$(parse_git_branch)\$ " # Without the colors
 for i in ~/.vim/profile.d/*.sh
 do 
-  echo "Loading $i"
+  echo -e "> $IGRN""Loading $IBLU $i $NO_COLOR"
   source $i
 done
 # I had to put the \[ and \] down here, as opposed to $IRED, to avoid wrapping funkiness.
