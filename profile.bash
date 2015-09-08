@@ -59,5 +59,6 @@ do
 done
 # I had to put the \[ and \] down here, as opposed to $IRED, to avoid wrapping funkiness.
 export PS1="\[$IRED\]$USER: \$(rvm_version)\[$NO_COLOR\]\w\[$IGRN\]\$(parse_git_branch)\n \[$IYEL\]⊗ \[$NO_COLOR\]"
-source  ~/.vim/fzfcommands.bash  
+source ~/.vim/fzfcommands.bash  
+source ~/Dropbox/dotfiles/profile  
 export EDITOR=vim

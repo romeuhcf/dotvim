@@ -60,7 +60,7 @@ set laststatus=2 " show status line all the time
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  autocmd BufWritePre vimrc,*.vim,.*.sh,*.rb,*.erb,*.html,*.js,*.css,*.php,*.py,*.json :call <SID>StripTrailingWhitespaces() " remove trailing white spaces before saving (only in specified filetypes)
+  autocmd BufWritePre *profile,vimrc,*.pp,Makefile,*.rake,*.vim,*.sh,*.rb,*.erb,*.html,*.js,*.css,*.php,*.py,*.json :call <SID>StripTrailingWhitespaces() " remove trailing white spaces before saving (only in specified filetypes)
 endif
 
 " function to remove trailing white space (while saving cursor position)
