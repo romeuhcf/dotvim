@@ -1,12 +1,20 @@
 #!/bin/bash -
 set -e
-
-function install_java8(){
+function install_ppa_java(){
 grep -q '^[^#].*webupd8team/java/ubuntu' /etc/apt/sources.list /etc/apt/sources.list.d/*list && return
 sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get update
+}
+
+function install_java8(){
 sudo apt-get install oracle-java8-installer -y
 }
+
+function install_java7(){
+sudo apt-get install oracle-java7-installer -y
+}
+
+
 function install_play_framework(){
 test -x /opt/play/activator && return
 cd /tmp
@@ -24,9 +32,11 @@ wget -c https://d1opms6zj7jotq.cloudfront.net/idea/ideaIC-14.1.4.tar.gz
 tar -xzvf ideaIC-14.1.4.tar.gz
 sudo mv /tmp/idea-IC-141.1532.4/ /opt/intellij
 }
-install_play_framework
-install_java8
+install_ppa_java
 install_intellij
+install_java8
+install_java7
+install_play_framework
 
 (
 echo '# DONT CHANGE'
