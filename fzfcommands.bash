@@ -2,6 +2,15 @@
 # -- FZF USEFUL COMMANDS ----------------------------------------
 # ---------------------------------------------------------------
 #
+## Search content 
+#   fs <texto>
+ss(){
+  local file
+  file=$(ag "$1" | fzf +s --ansi)
+  file=$(echo $file | sed 's/:.*//')
+  [ -n "$file" ] && ${EDITOR:-vim} "$file"
+}
+
 ## Opening files and Changing dir
 #   fe [FUZZY PATTERN] - Open the selected file with the default editor
 fe() {
