@@ -1,8 +1,8 @@
-source ~/.vim/plugins.vim
 
 call pathogen#infect()
 call pathogen#helptags()
 
+source ~/.vim/plugins.vim
 source ~/.vim/theme.vim
 
 set mouse=a
@@ -18,8 +18,6 @@ set showmatch		" Show matching brackets.
 " view settings
 set number " show line numbers
 set cc=120 " highlight N columns
-set cursorcolumn " show highlight columns on cursor
-set cursorline " highlight cursor line
 set linebreak " don't break wrapped lines on words
 set nowrap " set no word rap line
 
@@ -60,7 +58,7 @@ set laststatus=2 " show status line all the time
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  autocmd BufWritePre *profile,vimrc,*.pp,Makefile,*.rake,*.vim,*.sh,*.rb,*.erb,*.html,*.js,*.css,*.php,*.py,*.json :call <SID>StripTrailingWhitespaces() " remove trailing white spaces before saving (only in specified filetypes)
+  autocmd BufWritePre *profile,vimrc,*.pp,*.rake,*.vim,*.sh,*.rb,{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}*file,*.haml,*.slim,*.erb,*.html,*.js,*.css,*.php,*.py,*.json :call <SID>StripTrailingWhitespaces() " remove trailing white spaces before saving (only in specified filetypes)
 endif
 
 " function to remove trailing white space (while saving cursor position)
@@ -81,6 +79,32 @@ endfunction
 
 " use sudo to write the file
 cmap w!! w !sudo tee % >/dev/null
+""
+"" Wild settings
+""
+
+" TODO: Investigate the precise meaning of these settings
+" set wildmode=list:longest,list:full
+
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" Ignore librarian-chef, vagrant, test-kitchen and Berkshelf cache
+set wildignore+=*/tmp/librarian/*,*/.vagrant/*,*/.kitchen/*,*/vendor/cookbooks/*
+
+" Ignore rails temporary asset caches
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
 
 source ~/.vim/statusline.vim
 source ~/.vim/mappings.vim
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+

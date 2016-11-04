@@ -1,7 +1,7 @@
 " Q. How can I open a NERDTree automatically when vim starts up if no files
 " were specified?
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
 " Q. How can I close vim if the only window left open is a NERDTree?
@@ -16,6 +16,14 @@ let g:syntastic_check_on_open=1
 let g:syntastic_auto_jump=0
 let g:syntastic_enable_highlighting=1
 
+let g:user_emmet_leader_key='<C-A>'
 
 
 set rtp+=~/.fzf
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=235
+
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
