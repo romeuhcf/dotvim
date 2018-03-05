@@ -2,5 +2,4 @@ backup/*~
 tmp/%*
 tmp/*.sw?
 autoload
-colors
 bundle

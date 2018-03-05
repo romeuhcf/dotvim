@@ -8,31 +8,22 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-  # include .bashrc if it exists
-  if [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
-  fi
-fi
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-. ~/.gitflow.bash # Git Aliases
 alias gs='git status'
 alias gf='git flow'
 
 # Bash line config
 ESC="\033" # This is the escape sequence
 NO_COLOR="$ESC[0m"
-IRED="$ESC[1;31m" # ANSI color code for intense/bold red
-IGRN="$ESC[1;32m" # ANSI color code for intense/bold green
-IYEL="$ESC[1;33m" # ANSI color code for intense/bold yellow
-IBLU="$ESC[1;34m" # ANSI color code for intense/bold blue
+IRED="$ESC[01;38;5;88m" # ANSI color code for intense/bold red
+IGRN="$ESC[01;38;5;28m" # ANSI color code for intense/bold green
+IYEL="$ESC[01;38;5;136m" # ANSI color code for intense/bold yellow
+IBLU="$ESC[01;38;5;54m" # ANSI color code for intense/bold blue
 
 # From http://railstips.org/blog/archives/2009/02/02/bedazzle-your-bash-prompt-with-git-info/
 # I had to change 'git-symbolic-ref' to 'git symbolic-ref'
@@ -59,10 +50,7 @@ echo " ["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> 
 #  source $i
 #done
 # I had to put the \[ and \] down here, as opposed to $IRED, to avoid wrapping funkiness.
-export PS1="\[$IBLU\]$USER: \[$IGRN\]\$(rvm_version)\[$IBLU\]\w\[$IGRN\]\$(parse_git_branch)\n\[$IRED\]⚀  \[$NO_COLOR\]"
-export PS2="\[$IRED\]⚁  \[$NO_COLOR\]"
-source ~/.vim/fzfcommands.bash
-#source ~/Dropbox/dotfiles/profile
+export PS1="\[$IBLU\]$USER: \[$IGRN\]\$(rvm_version)\[$IBLU\]\w\[$IGRN\]\$(parse_git_branch)\n\[$IRED\]💢 \[$NO_COLOR\]"
+export PS2="\[$IRED\]❇️  \[$NO_COLOR\] "
 export EDITOR=vim
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

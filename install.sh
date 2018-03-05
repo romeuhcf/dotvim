@@ -1,6 +1,6 @@
 #!/bin/bash
 function install_os_dependencies(){
-for pkg in exuberant-ctags ncurses-term ack-grep silversearcher-ag vim curl
+for pkg in exuberant-ctags ncurses-term silversearcher-ag vim curl
 do
   dpkg -s $pkg &>/dev/null || sudo apt-get install -y $pkg
 done

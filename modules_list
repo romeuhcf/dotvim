@@ -5,7 +5,6 @@ tpope/vim-fugitive
 scrooloose/nerdtree
 vim-scripts/AutoComplPop
 vim-scripts/bash-support.vim
-vim-ruby/vim-ruby
 tpope/vim-endwise
 StanAngeloff/php.vim
 vim-scripts/matchit.zip
@@ -14,10 +13,12 @@ vim-scripts/blockle.vim
 scrooloose/syntastic
 slim-template/vim-slim
 airblade/vim-gitgutter
-altercation/vim-colors-solarized
 rking/ag.vim
 bogado/file-line
 mattn/emmet-vim
 tpope/vim-rails  
 nathanaelkane/vim-indent-guides
-pangloss/vim-javascript
+pangloss/vim-javascript 
+posva/vim-vue
+vim-ruby/vim-ruby 
+christoomey/vim-conflicted
